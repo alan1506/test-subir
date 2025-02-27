@@ -16,7 +16,5 @@ spec:
       containers:
       - name: springboottest
         image: 654654328400.dkr.ecr.us-east-2.amazonaws.com/nb/testservicio:latest
-        ports:
-        - containerPort: 8080
-      imagePullSecrets:
-      - name: ecr-secret
+        imagePullPolicy: Always
+      dnsPolicy: ClusterFirst
