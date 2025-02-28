@@ -9,6 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class SimpleController {
     @GetMapping("/status")
     public String getStatus() {
-        return "OK simoc";
+        return "OK simon";
     }
 }
