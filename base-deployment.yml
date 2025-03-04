@@ -3,6 +3,8 @@ kind: Deployment
 metadata:
   name: springboottest
   namespace: emisores
+  annotations:
+    redeploy-hash: "{{TIMESTAMP}}"
 spec:
   replicas: 1
   selector:
@@ -12,9 +14,14 @@ spec:
     metadata:
       labels:
         app: springboottest
+      annotations:
+        redeploy-hash: "{{TIMESTAMP}}"
     spec:
       containers:
       - name: springboottest
         image: 654654328400.dkr.ecr.us-east-2.amazonaws.com/nb/testservicio:latest
         imagePullPolicy: Always
+        env:
+        - name: TIMESTAMP
+          value: "{{TIMESTAMP}}"
       dnsPolicy: ClusterFirst
