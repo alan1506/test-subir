@@ -14,6 +14,6 @@ public class SimpleController {
 
     @GetMapping("/health")
     public String getHealth() {
-        return "OK prueba rollout 2";
+        return "OK prueba rollout 4 and tests";
     }
 }
