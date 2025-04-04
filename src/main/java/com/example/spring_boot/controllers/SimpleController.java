@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class SimpleController {
     @GetMapping("/status")
     public String getStatus() {
-        return "OK prueba rollout 2";
+        return "OK prueba rollout lates";
     }
 
     @GetMapping("/health")
