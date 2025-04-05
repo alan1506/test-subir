@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: springboottest
-        image: 654654328400.dkr.ecr.us-east-2.amazonaws.com/nb/testservicio:latest-#{codepipeline.PipelineExecutionId}
+        image: 654654328400.dkr.ecr.us-east-2.amazonaws.com/nb/testservicio:latest-#{PIPELINE_EXECUTION_ID}
         imagePullPolicy: Always
       dnsPolicy: ClusterFirst
