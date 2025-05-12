@@ -1,0 +1,14 @@
+image: maven:3.9.0-amazoncorretto-17
+
+pipelines:
+  branches:
+    master_sonar:
+      - step:
+          name: SonarQube Scan
+          caches:
+            - maven
+          script:
+            - mvn clean verify sonar:sonar
+              -Dsonar.projectKey=$SONAR_PROJECT_KEY
+              -Dsonar.host.url=$SONAR_HOST_URL
+              -Dsonar.login=$SONAR_TOKEN
